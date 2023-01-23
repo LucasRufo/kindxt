@@ -37,7 +37,8 @@ public class KindClusterBuilder
 
         if (parameters.Any(x => new[] { "--create-cluster", "-c" }.Contains(x)))
         {
-            var tmpDirectory = Path.Combine(KindxtPath.GetProcessPath(), "tmp", "kind");
+            //var tmpDirectory = Path.Combine(KindxtPath.GetProcessPath(), "tmp", "kind");
+            var tmpDirectory = Path.Combine(Path.GetTempPath(), "tmp", "kind");
 
             _fileManager.CreateDirectoryIfNotExists(tmpDirectory);
 
